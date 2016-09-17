@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onePush</title>
+	{% load static %}
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script   src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"   integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="   crossorigin="anonymous"></script> 
+	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://use.fontawesome.com/edaad0f95c.js"></script>	
+	<link rel="stylesheet" href="{% static "css/style.css" %}">
+	<script src="{% static "js/script.js" %}"></script>
+</head>
+<body class="container-fluid">
+
+	<div class="row banner">
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<a href="#" title="TopGit" class="banner-logo h1">
+				<i class="fa fa-yelp banner-logo-icon"></i>
+				OnePush<span class="small banner-small-text">- finding the best online website!</span>
+			</a>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="banner-alert h3" role="alert">
+				<label id="searchAlert"></label>
+				<i id="loading-icon" class="fa fa-spinner pull-right" aria-hidden="true"></i>
+			</div>
+		</div>
+	</div>
+
+	<div class="row search-body">
+
+	<div class="col-sm-7 search-results">
+		<div class="row search-bar">
+			<div class="col-sm-6 col-sm-offset-6 input-group">
+				<span class="input-group-addon"><i class="fa fa-search"></i></span>
+				<input type="search" class="form-control" name="lang_search" id="searchInput" placeholder="Search (by title, url or tag)" />
+				<i class="fa fa-times-circle clearSearch"></i>
+			</div>
+		</div>
+		<div class="row choose-no">
+			<label>Show <select id="select_length" class="">
+			<option value="10">10</option>
+			<option value="25" selected>25</option>
+			<option value="50">50</option>
+			</select> websites per page</label>
+		</div>
+		<div class="row result-list">
+			<ul class="list-group site-result">
+				
+			</ul>
+		</div>
+		<div class="row result-pagination text-center">
+		</div>
+		<div id="jump-to" title="Pagination">
+			
+		</div>
+	</div>
+
+	<div class="col-sm-4 col-sm-offset-1 add-site">
+		<div class="row">
+			<div class="panel panel-default panel-hlpr">
+	  			<div class="panel-heading">
+	    			<h3 class="panel-title">Contribute / Add Website</h3>
+	  			</div>
+	  			<div class="panel-body">
+	    			<div class="form-group">
+						<input type="text" class="form-control" id="title" placeholder="title">
+					</div>
+					<div class="form-group">
+						<input type="url" class="form-control" id="url" placeholder="web/url address">
+					</div>
+					<div class="form-inline">
+						<div class="form-group">
+							<input type="text" class="form-control" id="tag" placeholder="tag">
+						</div>  
+						<button type="submit" id="addSite" class="btn btn-default pull-right"><i class="fa fa-plus"></i><span class="panel-span">Push website</span></button>
+						  
+					</div>
+	  			</div>
+			</div>			
+		</div>
+	</div>
+
+	</div>
+
+
+
+</body>
+</html>
